@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>カー活 | 地域の車が地域のお店の広告塔になる</title>
+
+<meta name="description" content="大阪限定。地域の車を活用した新しい広告サービス。月15,000円から10台掲載可能。β版広告主募集中。">
+
+<meta name="keywords" content="カー広告,車広告,地域広告,大阪広告,動物病院広告,整備工場広告,中古車販売広告">
+
+<meta property="og:title" content="カー活 | 地域の車が地域のお店の広告塔になる">
+<meta property="og:description" content="月15,000円から始める地域密着型カー広告">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--navy:#0F172A;
+--green:#06C755;
+--green-dark:#00b04f;
+--white:#ffffff;
+--gray:#f8fafc;
+--text:#1e293b;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Noto Sans JP',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:white;
+color:var(--text);
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+background:var(--navy);
+position:fixed;
+width:100%;
+z-index:999;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:900;
+color:white;
+}
+
+.logo span{
+color:var(--green);
+}
+
+.cta-btn{
+background:var(--green);
+color:white;
+padding:12px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+display:inline-block;
+}
+
+.cta-btn:hover{
+background:var(--green-dark);
+transform:translateY(-2px);
+}
+
+.hero{
+background:linear-gradient(
+135deg,
+#0F172A 0%,
+#16213e 100%
+);
+
+padding-top:140px;
+padding-bottom:100px;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(6,199,85,.08);
+border-radius:50%;
+top:-250px;
+right:-250px;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:rgba(255,255,255,.05);
+border-radius:50%;
+bottom:-180px;
+left:-150px;
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+background:rgba(6,199,85,.15);
+border:1px solid rgba(6,199,85,.4);
+padding:10px 18px;
+border-radius:30px;
+margin-bottom:25px;
+font-size:14px;
+font-weight:700;
+}
+
+.hero h1{
+font-size:58px;
+font-weight:900;
+line-height:1.2;
+margin-bottom:25px;
+}
+
+.hero h1 span{
+color:var(--green);
+}
+
+.hero p{
+font-size:22px;
+line-height:1.8;
+margin-bottom:35px;
+opacity:.95;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:var(--green);
+color:white;
+padding:18px 34px;
+border-radius:10px;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+background:var(--green-dark);
+}
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+padding:18px 34px;
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+}
+
+.hero-card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+color:var(--navy);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.price{
+font-size:58px;
+font-weight:900;
+color:var(--green);
+line-height:1;
+}
+
+.price-sub{
+margin-top:10px;
+font-size:18px;
+font-weight:700;
+}
+
+.hero-list{
+margin-top:25px;
+}
+
+.hero-list li{
+list-style:none;
+padding:10px 0;
+font-size:16px;
+}
+
+.hero-list li::before{
+content:'✓ ';
+color:var(--green);
+font-weight:bold;
+}
+
+.section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+font-weight:900;
+margin-bottom:20px;
+color:var(--navy);
+}
+
+.section-sub{
+text-align:center;
+font-size:20px;
+margin-bottom:60px;
+color:#64748b;
+}
+
+.problem{
+background:var(--gray);
+}
+
+.problem-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.problem-card{
+background:white;
+padding:35px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.problem-card:hover{
+transform:translateY(-5px);
+}
+
+.problem-icon{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.problem-card h3{
+font-size:22px;
+margin-bottom:15px;
+color:var(--navy);
+}
+
+.problem-card p{
+color:#64748b;
+line-height:1.8;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.hero-content{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.problem-grid{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:32px;
+}
+
+.price{
+font-size:46px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<div class="logo">
+カー<span>活</span>
+</div>
+
+<a href="https://lin.ee/8l7qSu4T" class="cta-btn">
+LINEで相談する
+</a>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div>
+
+<div class="badge">
+大阪限定 β版広告主募集中
+</div>
+
+<h1>
+地域の車が<br>
+<span>地域のお店の広告塔</span>になる
+</h1>
+
+<p>
+Google広告やチラシよりも、
+もっと地域密着で、
+もっと低価格な広告手法を。
+
+カー活は地域を走る車を活用した
+新しい広告サービスです。
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSf6p4y182yiWSB0jlRWGeN2zWtFw5Hu3_7NgI5fj2K-McomFg/viewform?usp=publish-editor"
+class="btn-primary">
+無料アンケートへ
+</a>
+
+<a href="https://lin.ee/8l7qSu4T"
+class="btn-secondary">
+LINE相談
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="price">
+¥15,000
+</div>
+
+<div class="price-sub">
+10台掲載 / 月額
+</div>
+
+<ul class="hero-list">
+<li>大阪限定 β版価格</li>
+<li>地域密着広告</li>
+<li>先着10社募集</li>
+<li>低予算で開始可能</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section problem">
+
+<div class="container">
+
+<h2 class="section-title fade">
+こんなお悩みありませんか？
+</h2>
+
+<p class="section-sub fade">
+地域事業者の広告には共通の課題があります
+</p>
+
+<div class="problem-grid">
+
+<div class="problem-card fade">
+<div class="problem-icon">💰</div>
+<h3>広告費が高い</h3>
+<p>
+Google広告やポータルサイトは
+毎月の負担が大きい
+</p>
+</div>
+
+<div class="problem-card fade">
+<div class="problem-icon">📉</div>
+<h3>効果が不透明</h3>
+<p>
+チラシや広告の効果が
+見えづらい
+</p>
+</div>
+
+<div class="problem-card fade">
+<div class="problem-icon">📍</div>
+<h3>地域に届かない</h3>
+<p>
+近隣住民へ効率よく
+認知を広げたい
+</p>
+</div>
+
+<div class="problem-card fade">
+<div class="problem-icon">🚀</div>
+<h3>新しい集客方法</h3>
+<p>
+競合が使っていない
+新しい広告媒体を探している
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title fade">
+カー活とは？
+</h2>
+
+<p class="section-sub fade">
+地域のお店と地域のドライバーをつなぐ
+新しい地域密着型広告サービス
+</p>
+
+<div class="how-grid">
+
+<div class="how-box fade">
+<div class="how-number">01</div>
+<h3>広告主</h3>
+<p>
+地域のお店が広告を掲載
+</p>
+</div>
+
+<div class="how-arrow">→</div>
+
+<div class="how-box fade">
+<div class="how-number">02</div>
+<h3>カー活</h3>
+<p>
+掲載車両をマッチング
+</p>
+</div>
+
+<div class="how-arrow">→</div>
+
+<div class="how-box fade">
+<div class="how-number">03</div>
+<h3>ドライバー</h3>
+<p>
+車に広告を掲載
+</p>
+</div>
+
+<div class="how-arrow">→</div>
+
+<div class="how-box fade">
+<div class="how-number">04</div>
+<h3>地域住民</h3>
+<p>
+日常の中で広告を目にする
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.how-grid{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.how-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+width:220px;
+text-align:center;
+}
+
+.how-number{
+width:50px;
+height:50px;
+background:var(--green);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-weight:900;
+margin:auto;
+margin-bottom:15px;
+}
+
+.how-box h3{
+margin-bottom:10px;
+color:var(--navy);
+}
+
+.how-arrow{
+font-size:32px;
+font-weight:900;
+color:var(--green);
+}
+
+@media(max-width:900px){
+.how-arrow{
+display:none;
+}
+}
+
+</style>
+
+<section class="section" style="background:#F8FAFC;">
+
+<div class="container">
+
+<h2 class="section-title fade">
+掲載イメージ
+</h2>
+
+<p class="section-sub fade">
+現在検討している3つの掲載方式
+</p>
+
+<div class="ad-grid">
+
+<div class="ad-card fade">
+
+<div class="ad-image">
+🚗
+</div>
+
+<h3>
+側面マグネット広告
+</h3>
+
+<p>
+車体側面へ掲載
+
+地域走行時の視認性が高い
+</p>
+
+</div>
+
+<div class="ad-card fade">
+
+<div class="ad-image">
+🚙
+</div>
+
+<h3>
+後面マグネット広告
+</h3>
+
+<p>
+後続車へ強く訴求
+
+信号待ちでも認知されやすい
+</p>
+
+</div>
+
+<div class="ad-card fade">
+
+<div class="ad-image">
+🚘
+</div>
+
+<h3>
+リアガラス広告
+</h3>
+
+<p>
+高いインパクト
+
+ブランド認知向け
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.ad-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.ad-card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.ad-card:hover{
+transform:translateY(-8px);
+}
+
+.ad-image{
+font-size:80px;
+margin-bottom:20px;
+}
+
+.ad-card h3{
+margin-bottom:15px;
+color:var(--navy);
+}
+
+.ad-card p{
+color:#64748b;
+line-height:1.8;
+}
+
+@media(max-width:900px){
+
+.ad-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title fade">
+料金比較
+</h2>
+
+<p class="section-sub fade">
+地域事業者でも始めやすい価格設定
+</p>
+
+<div class="pricing-wrap fade">
+
+<div class="price-card old">
+
+<h3>
+一般的な広告
+</h3>
+
+<ul>
+
+<li>Google広告</li>
+
+<li>ポータルサイト掲載</li>
+
+<li>紙媒体広告</li>
+
+<li>月数万円〜数十万円</li>
+
+</ul>
+
+</div>
+
+<div class="vs">
+VS
+</div>
+
+<div class="price-card new">
+
+<h3>
+カー活 β版
+</h3>
+
+<div class="big-price">
+15,000円
+</div>
+
+<p>
+10台掲載
+
+大阪限定
+
+先着10社
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.pricing-wrap{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.price-card{
+padding:40px;
+border-radius:20px;
+width:320px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.old{
+background:white;
+}
+
+.old ul{
+margin-top:20px;
+text-align:left;
+line-height:2;
+}
+
+.new{
+background:var(--navy);
+color:white;
+}
+
+.big-price{
+font-size:64px;
+font-weight:900;
+color:var(--green);
+margin:20px 0;
+}
+
+.vs{
+font-size:42px;
+font-weight:900;
+color:var(--green);
+}
+
+</style>
+
+<section class="section" style="background:#F8FAFC;">
+
+<div class="container">
+
+<h2 class="section-title fade">
+カー活が選ばれる理由
+</h2>
+
+<div class="benefit-grid">
+
+<div class="benefit-card fade">
+<h3>地域密着</h3>
+<p>
+実際に地域を走る車が広告媒体
+</p>
+</div>
+
+<div class="benefit-card fade">
+<h3>低コスト</h3>
+<p>
+地域事業者でも始めやすい
+</p>
+</div>
+
+<div class="benefit-card fade">
+<h3>継続露出</h3>
+<p>
+毎日の走行で認知を獲得
+</p>
+</div>
+
+<div class="benefit-card fade">
+<h3>新規性</h3>
+<p>
+まだ競合が少ない広告媒体
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.benefit-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.benefit-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.benefit-card h3{
+margin-bottom:15px;
+color:var(--navy);
+}
+
+@media(max-width:900px){
+
+.benefit-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title fade">
+大阪限定 β版募集
+</h2>
+
+<p class="section-sub fade">
+現在サービス開始前の実証実験を行っています。
+先着10社限定で広告主様を募集しています。
+</p>
+
+<div class="beta-box fade">
+
+<h3>
+こんな事業者様におすすめです
+</h3>
+
+<ul>
+
+<li>動物病院</li>
+
+<li>整備工場</li>
+
+<li>中古車販売店</li>
+
+<li>車検事業者</li>
+
+<li>学習塾</li>
+
+<li>不動産会社</li>
+
+<li>地域密着型店舗</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.beta-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.beta-box h3{
+margin-bottom:20px;
+text-align:center;
+color:var(--navy);
+}
+
+.beta-box ul{
+line-height:2.2;
+font-size:18px;
+}
+
+.beta-box li{
+list-style:none;
+}
+
+.beta-box li::before{
+content:'✓ ';
+color:var(--green);
+font-weight:bold;
+}
+
+</style>
+
+<section class="section" style="background:#F8FAFC;">
+
+<div class="container">
+
+<h2 class="section-title fade">
+よくある質問
+</h2>
+
+<div class="faq-wrap">
+
+<div class="faq-item fade">
+
+<button class="faq-question">
+どの地域を走行しますか？
+</button>
+
+<div class="faq-answer">
+<p>
+大阪府内を中心に走行するドライバーを募集しています。
+今後エリア拡大予定です。
+</p>
+</div>
+
+</div>
+
+<div class="faq-item fade">
+
+<button class="faq-question">
+どのような車に掲載されますか？
+</button>
+
+<div class="faq-answer">
+<p>
+一般乗用車を中心に掲載予定です。
+車種や掲載条件は今後調整していきます。
+</p>
+</div>
+
+</div>
+
+<div class="faq-item fade">
+
+<button class="faq-question">
+掲載期間はどれくらいですか？
+</button>
+
+<div class="faq-answer">
+<p>
+現在は1ヶ月単位を想定しています。
+β版のため今後変更される場合があります。
+</p>
+</div>
+
+</div>
+
+<div class="faq-item fade">
+
+<button class="faq-question">
+効果測定はできますか？
+</button>
+
+<div class="faq-answer">
+<p>
+β版ではアンケート中心ですが、
+将来的には走行レポート等も検討しています。
+</p>
+</div>
+
+</div>
+
+<div class="faq-item fade">
+
+<button class="faq-question">
+今すぐ申し込めますか？
+</button>
+
+<div class="faq-answer">
+<p>
+まずはアンケートへご回答ください。
+内容確認後、ご案内いたします。
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.faq-wrap{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:15px;
+}
+
+.faq-question{
+width:100%;
+padding:25px;
+font-size:18px;
+font-weight:700;
+text-align:left;
+border:none;
+border-radius:12px;
+background:white;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+background:white;
+border-radius:0 0 12px 12px;
+}
+
+.faq-answer p{
+padding:20px;
+line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+max-height:200px;
+}
+
+</style>
+
+<section
+class="section"
+style="
+background:linear-gradient(
+135deg,
+#0F172A 0%,
+#16213e 100%
+);
+color:white;
+text-align:center;
+"
+>
+
+<div class="container">
+
+<h2
+style="
+font-size:48px;
+font-weight:900;
+margin-bottom:20px;
+"
+class="fade"
+>
+地域の車が、
+地域のお店の広告塔になる
+</h2>
+
+<p
+style="
+font-size:22px;
+margin-bottom:40px;
+"
+class="fade"
+>
+まずは無料アンケートにご協力ください
+</p>
+
+<div
+style="
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+"
+class="fade"
+>
+
+<a
+href="https://docs.google.com/forms/d/e/1FAIpQLSf6p4y182yiWSB0jlRWGeN2zWtFw5Hu3_7NgI5fj2K-McomFg/viewform?usp=publish-editor"
+class="btn-primary"
+>
+無料アンケートへ
+</a>
+
+<a
+href="https://lin.ee/8l7qSu4T"
+class="btn-secondary"
+>
+LINEで相談する
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer
+style="
+background:#08101f;
+color:white;
+padding:50px 20px;
+text-align:center;
+"
+>
+
+<h3
+style="
+font-size:28px;
+margin-bottom:15px;
+"
+>
+カー活
+</h3>
+
+<p>
+大阪限定 β版募集中
+</p>
+
+<p
+style="
+margin-top:15px;
+opacity:.7;
+font-size:14px;
+"
+>
+© 2025 カー活 All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+
+observer.observe(el);
+
+});
+
+document.querySelectorAll('.faq-question').forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+btn.parentElement.classList.toggle('active');
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
